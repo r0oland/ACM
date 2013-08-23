@@ -20,3 +20,10 @@ rotation.
 
 Flowmeter used:
 Koolance INS-FM17N
+
+## thermistor details
+- based on adapted Steinhart-Hart equation, can be found under https://en.wikipedia.org/wiki/Thermistor#B_or_.CE.B2_parameter_equation
+- thermistor in use: NTC 10kOhm, Model number: NXFT15XH103FA2B025
+-- datasheet: http://www.murata.com/products/catalog/pdf/r44e.pdf
+-- digi-key: http://www.digikey.com/catalog/en/partgroup/nxft15/10785?mpart=NXFT15XH103FA2B025&vendor=490&WT.z_ref_page_type=Part%20Search&WT.z_ref_page_sub_type=Part%20Detail%20Page&WT.z_ref_page_id=0
+-- B-Parameter: 3350–3399K -> I use 3375
