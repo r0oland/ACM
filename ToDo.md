@@ -14,3 +14,6 @@ https://github.com/everycook/EveryCook_RaspberryPi_Daemon/blob/master/daemon/dae
 ### 7-Segment Displays
 * http://datasheets.maximintegrated.com/en/ds/MAX7219-MAX7221.pdf
 * https://www.mikrocontroller.net/articles/LED-Matrix
+
+### Illumination for case using LED strip, controlled by Android
+* http://makezine.com/projects/android-arduino-led-strip-lights/
