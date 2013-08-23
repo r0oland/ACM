@@ -1,4 +1,4 @@
-//function definitions-------------------------------------------------------------------
+//measureTemperature-------------------------------------------------------------------
 float measureTemperature(int analog_pin) {
   float resistance;  
   float temperature;
@@ -8,4 +8,9 @@ float measureTemperature(int analog_pin) {
   temperature = temperature - 273.15;  // Convert Kelvin to Celsius                      
   
   return temperature; 
+}
+
+//interruptFunction-------------------------------------------------------------------
+void interruptFunction(){
+  total_count_++;
 }

@@ -14,6 +14,9 @@ const int TEMPERATURE_DISPLAY_PRECISION = 1;
 // width = 3 digits before dec. point + dec. point + precision digits
 const int TEMPERATURE_DISPLAY_WIDTH = TEMPERATURE_DISPLAY_PRECISION + 4;
 
+const int FLOW_DISPLAY_PRECISION = 2;
+const int FLOW_DISPLAY_WIDTH = FLOW_DISPLAY_PRECISION + 3;
+// width = 2 digits before dec. point + dec. point + precision digits
 //declaration-------------------------------------------------------------------
 
 /*********************************************************************************
@@ -35,6 +38,8 @@ void displayTemperatures();
  **  Output: -
  *********************************************************************************/
 void printTemperatureValue(int analog_Pin);
+
+void displayFlow();
 
 
 
