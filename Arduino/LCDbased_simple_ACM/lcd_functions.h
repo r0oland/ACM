@@ -3,13 +3,17 @@
  **  Provides functions to display my values on the lcd
  **  Written By:    Johannes Rebling, 2013
  **
- *********************************************************************************/
+ *********************************************************************************/ 
 
-//#include "globals.h"
- 
+//includes---------------------------------------------------------------------
+#include <LiquidCrystal.h>
+#include <stdlib.h> 
  
 //constants---------------------------------------------------------------------
 const int TEMPERATURE_DISPLAY_PRECISION = 1;
+// width = 3 digits before dec. point + dec. point + precision digits
+const int TEMPERATURE_DISPLAY_WIDTH = TEMPERATURE_DISPLAY_PRECISION + 4;
+
 //declaration-------------------------------------------------------------------
 
 /*********************************************************************************

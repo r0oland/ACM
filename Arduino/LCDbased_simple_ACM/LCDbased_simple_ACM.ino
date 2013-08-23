@@ -9,18 +9,17 @@
  http://www.arduino.cc/en/Tutorial/LiquidCrystal
  */
 
+//includes---------------------------------------------------------------------
+
 #include <LiquidCrystal.h>
 #include "thermistor.h"
 #include "globals.h"
 #include "lcd_functions.h"
-#include <math.h>
-#include<stdlib.h>
 
-// initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
 void setup() {
-  lcd.begin(20, 4);
+  lcd.begin(20, 4); //number of chars per line, number of lines
 }
 
 void loop() {

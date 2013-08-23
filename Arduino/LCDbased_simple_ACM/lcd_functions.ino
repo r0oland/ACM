@@ -1,5 +1,3 @@
-#include <LiquidCrystal.h>
-#include <stdlib.h>
 
 //function definitions-------------------------------------------------------------------
 void displayTemperatures() {
@@ -21,7 +19,7 @@ void displayTemperatures() {
 
 void printTemperatureValue(int analog_Pin) {
   char temp_char[6]; //char to display temperature with max width of 6 (123.42 degrees)
-  dtostrf(measureTemperature(analog_Pin),6,TEMPERATURE_DISPLAY_PRECISION,temp_char);//convert to string with given precision
+  dtostrf(measureTemperature(analog_Pin),TEMPERATURE_DISPLAY_WIDTH,TEMPERATURE_DISPLAY_PRECISION,temp_char);//convert to string with given precision
   lcd.print(temp_char);
 }
 

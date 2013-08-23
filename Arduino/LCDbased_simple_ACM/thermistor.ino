@@ -1,5 +1,3 @@
-#include <math.h>
-
 //function definitions-------------------------------------------------------------------
 float measureTemperature(int analog_pin) {
   float resistance;  
