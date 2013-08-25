@@ -25,7 +25,8 @@ void setup() {
 
 void loop() {
   displayTemperatures();
-  //displayFlow();
+  displayFlow();
+  displayUptime();
 }
 
 

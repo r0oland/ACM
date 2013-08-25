@@ -1,8 +1,19 @@
 #To Do
 
 ## Essentials:
-- monitor CPU, RAM and maybe HDD with Arduino, 
-using http://www.instructables.com/id/Arduino-CPURAM-usage-monitor-LCD/ or sth similar
+
+### controll fans by PWM
+- see pdf file in info_material 
+
+### monitor CPU, RAM and HDD with Arduino and in General
+- java based, should work in Processing, give it a try:
+http://stackoverflow.com/questions/47177/how-to-monitor-the-computers-cpu-memory-and-disk-usage-in-java where they recommend http://www.hyperic.com/products/sigar
+
+- VB.net based (hence not really usefull...) using http://www.instructables.com/id/Arduino-CPURAM-usage-monitor-LCD/ or sth similar
+
+## Get:
+- try/get new Thermistors
+http://www.ebay.de/itm/10x-NTC-Heissleiter-Thermistor-2k-60mW-55-155-C-RoHS-B57861S0202F040-/310364148634?pt=LH_DefaultDomain_77&hash=item484325139a
 
 ## Feature Creap List:
 

@@ -9,18 +9,10 @@
 #include <LiquidCrystal.h>
 #include <stdlib.h> 
  
-//constants---------------------------------------------------------------------
-const int TEMPERATURE_DISPLAY_PRECISION = 1;
-// width = 3 digits before dec. point + dec. point + precision digits
-const int TEMPERATURE_DISPLAY_WIDTH = TEMPERATURE_DISPLAY_PRECISION + 4;
-
-const int FLOW_DISPLAY_PRECISION = 2;
-const int FLOW_DISPLAY_WIDTH = FLOW_DISPLAY_PRECISION + 3;
-// width = 2 digits before dec. point + dec. point + precision digits
 //declaration-------------------------------------------------------------------
 
 /*********************************************************************************
- **  displayTemperatures()
+ **  displayTemperatures
  **
  **  displays the temperatures measured n the LCD Display
  **
@@ -30,7 +22,7 @@ const int FLOW_DISPLAY_WIDTH = FLOW_DISPLAY_PRECISION + 3;
 void displayTemperatures();
 
 /*********************************************************************************
- **  printTemperatureValue()
+ **  printTemperatureValue
  **
  **  prints the temperature value with limited precision
  **
@@ -39,7 +31,50 @@ void displayTemperatures();
  *********************************************************************************/
 void printTemperatureValue(int analog_Pin);
 
+/*********************************************************************************
+ **  printTemperatureValue()
+ **
+ **  prints the current and total flow 
+ **
+ **  Input: - 
+ **  Output: -
+ *********************************************************************************/
 void displayFlow();
+
+/*********************************************************************************
+ **  displayUptime()
+ **
+ **  displays the current UpTime
+ **
+ **  Input: - 
+ **  Output: -
+ *********************************************************************************/
+void displayUptime();
+
+/*********************************************************************************
+ **  modulator()
+ **
+ **  calculates times that are given in seconds and puts 
+ **  them into an array in the following maner 
+ **  array[]=={seconds, seconds/10, minutes/10, minutes, hours}
+ **
+ **  Input: - 
+ **  Output: -
+ *********************************************************************************/
+ void modulator(unsigned long time[]);
+ 
+ /*********************************************************************************
+ **  timePrinter()
+ **
+ **  displays time stored in the time array from the modulator function
+ **  as d:hh, hh:mm or mm:ss depending on time in array (larges value counts)
+ **
+ **  Input: displayTime array, array[]=={seconds, seconds/10, minutes/10, minutes, hours}
+ **  Output: -
+ *********************************************************************************/
+ void timePrinter(unsigned long displayTime[]);
+
+
 
 
 
