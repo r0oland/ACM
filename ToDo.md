@@ -1,5 +1,9 @@
 #To Do
 
+## Essentials:
+- monitor CPU, RAM and maybe HDD with Arduino, 
+using http://www.instructables.com/id/Arduino-CPURAM-usage-monitor-LCD/ or sth similar
+
 ## Feature Creap List:
 
 ### high precision thermistor measurements
