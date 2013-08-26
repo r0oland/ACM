@@ -62,13 +62,14 @@ void displayUptime() {//display Uptime:
   if ((millis() - timer_uptime) > 250) //update display every 500ms
   {
     char temp_char[6]; //max char length = 5 chars
-    unsigned long uptime[] = {millis()/1000,0,0,0,0};
+    unsigned long uptime[] = {
+      millis()/1000,0,0,0,0    };
 
     lcd.setCursor(0,3);
     lcd.print("Uptime: ");
     lcd.setCursor(8,3);
     modulator(uptime);
-    timePrinter(uptime); 
+    timePrinter(uptime);
 
     timer_uptime = millis();
   }
@@ -78,7 +79,7 @@ void displayUptime() {//display Uptime:
 //---------> Modulator <------------------------
 void modulator(unsigned long time[]){
   unsigned long seconds[] = {
-    86400, 3600, 60  };
+    86400, 3600, 60    };
 
   for (int i=1; i<=4; i++)
   {
@@ -121,6 +122,18 @@ void timePrinter(unsigned long displayTime[]){
     lcd.print("s");
   }
 }
+
+//---------> cleaerLCD <------------------------
+void clearLCD(){
+  static unsigned long timer;
+  if ((millis() - timer) > (1000*30)) //update display every 30s
+  {
+    lcd.clear(); 
+    timer = millis();
+  }
+}
+
+
 
 
 

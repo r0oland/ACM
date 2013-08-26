@@ -14,8 +14,14 @@ http://stackoverflow.com/questions/47177/how-to-monitor-the-computers-cpu-memory
 ## Get:
 - try/get new Thermistors
 http://www.ebay.de/itm/10x-NTC-Heissleiter-Thermistor-2k-60mW-55-155-C-RoHS-B57861S0202F040-/310364148634?pt=LH_DefaultDomain_77&hash=item484325139a
+- larger Arduino Board: http://www.ebay.de/itm/SainSmart-Mega-2560-R3-ATmega2560-16AU-ATMEGA16U2-USB-Cabe-For-2013-Arduino-/230964470391?pt=Wissenschaftliche_Ger%C3%A4te&hash=item35c68e2277
 
 ## Feature Creap List:
+### Get a better display, eg:
+- SainSmart 3.2" TFT LCD Modul+Touch Panel
+found at http://www.ebay.com/itm/SainSmart-3-2-TFT-LCD-Modul-Touch-Panel-PCB-adapter-SD-Reader-fur-Arduino-2560-/320934310788?ssPageName=STRK:MESE:IT
+- jesus christ this is sooooooo coool:
+https://www.youtube.com/watch?v=JXcVw8dwxPw
 
 ### high precision thermistor measurements
 * using 6-Channel, Low Noise, Low Power, 24-/16-Bit ADC with On-Chip In-Amp and Reference:
@@ -32,3 +38,6 @@ https://github.com/everycook/EveryCook_RaspberryPi_Daemon/blob/master/daemon/dae
 
 ### Illumination for case using LED strip, controlled by Android
 * http://makezine.com/projects/android-arduino-led-strip-lights/
+
+### Absolutely not necessay: Measure Air Presure
+http://www.ebay.de/itm/Digita-BMP085-Module-Digitale-Luftdruck-GY-65-Sensor-Luftdruck-Modul-Arduino-UNO/390617561175?_trksid=p2047675.m2109&_trkparms=aid%3D555003%26algo%3DPW.CAT%26ao%3D2%26asc%3D29%26meid%3D847245134912602426%26pid%3D100010%26prg%3D1013%26rk%3D2%26rkt%3D15%26sd%3D230967372889%26
