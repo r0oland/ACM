@@ -3,16 +3,13 @@
 void displayTemperatures() {
   static unsigned long timer_temp_teasurement;
   if ((millis() - timer_temp_teasurement) > 1000) //update display every 500ms
-  {
-    lcd.setCursor(0, 0);
+  {    
     lcd.setCursor(0, 0);
     lcd.print("T:");
-    lcd.setCursor(2, 0);
     printTemperatureValue(THERMISTORPIN0);
-    lcd.setCursor(8, 0);
     printTemperatureValue(THERMISTORPIN1);
-    lcd.setCursor(14, 0);
     printTemperatureValue(THERMISTORPIN2);
+    
     timer_temp_teasurement = millis();
   }
 }
@@ -60,10 +57,10 @@ void displayFlow() { //displays the following: xxxxxL w x.xxL/min
 void displayUptime() {//display Uptime:
   static unsigned long timer_uptime;
   if ((millis() - timer_uptime) > 250) //update display every 500ms
-  {
+  {    
     char temp_char[6]; //max char length = 5 chars
     unsigned long uptime[] = {
-      millis()/1000,0,0,0,0    };
+      millis()/10,0,0,0,0    };
 
     lcd.setCursor(0,3);
     lcd.print("Uptime: ");
@@ -94,33 +91,30 @@ void modulator(unsigned long time[]){
 
 //---------> TimePrinter <------------------------
 void timePrinter(unsigned long displayTime[]){
+  
   if (displayTime[1] > 0) //display time 01d44h
   {
-    lcd.print(displayTime[1]/10);
-    lcd.print(displayTime[1]%10);
-    lcd.print("d");
-    lcd.print(displayTime[2]/10);
-    lcd.print(displayTime[2]%10);
-    lcd.print("h");
+    printTwoDigitsAndUnit (displayTime, 1);
+    printTwoDigitsAndUnit (displayTime, 2);
   }
   else if (displayTime[2] > 0) //display time 12h44m
   {
-    lcd.print(displayTime[2]/10);
-    lcd.print(displayTime[2]%10);
-    lcd.print("h");
-    lcd.print(displayTime[3]/10);
-    lcd.print(displayTime[3]%10);
-    lcd.print("m");
+    printTwoDigitsAndUnit (displayTime, 2);
+    printTwoDigitsAndUnit (displayTime, 3);
   }
   else  //display time 02m22s
   {
-    lcd.print(displayTime[3]/10);
-    lcd.print(displayTime[3]%10);
-    lcd.print("m");
-    lcd.print(displayTime[4]/10);
-    lcd.print(displayTime[4]%10);
-    lcd.print("s");
+    printTwoDigitsAndUnit (displayTime, 3);
+    printTwoDigitsAndUnit (displayTime, 4);
   }
+}
+
+void printTwoDigitsAndUnit (unsigned long time_array[], byte time_to_print){
+  char time_units[] = {"0dhms"};//0 added to make numbers aggree between time_array and time_units[]
+  //i.e. time_array[1] corresponds to days, so time_units[1] should give "d"
+  lcd.print(time_array[time_to_print]/10); //print second digit before coma, i.e. the 1 in 12
+  lcd.print(time_array[time_to_print]%10); //print first digit before coma, i.e. the 2 in 12
+  lcd.print(time_units[time_to_print]); //print correct unit (i.e. d,h,m or s)
 }
 
 //---------> cleaerLCD <------------------------
@@ -133,6 +127,7 @@ void clearLCD(){
   }
 }
 
+//---------> displayRPM <------------------------
 void displayRPM(){
   static unsigned long timer;
   
@@ -148,7 +143,6 @@ void displayRPM(){
     total_rpm_count_ = 0;
   }
 }
- 
 
 
 
