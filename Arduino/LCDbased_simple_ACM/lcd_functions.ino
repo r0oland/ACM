@@ -31,7 +31,7 @@ void displayFlow() { //displays the following: xxxxxL w x.xxL/min
   static unsigned long last_count_value;
   if ((millis() - timer_flow_teasurement) > 1000) //update display every 500ms
   {
-    float total_flow = total_count_*0.307/60;
+    float total_flow = total_flow_count_*0.307/60;
     char temp_char[5]; //max char length = 5 chars
 
     dtostrf(total_flow,5,0,temp_char);//convert to string with precision 2 and store in temp_char
@@ -41,7 +41,7 @@ void displayFlow() { //displays the following: xxxxxL w x.xxL/min
     lcd.print("L with ");
 
     //calc total flow from difference in counts
-    float current_flow = 0.307*(total_count_ - last_count_value); //flow in L/min
+    float current_flow = 0.307*(total_flow_count_ - last_count_value); //flow in L/min
     dtostrf(current_flow,4,1,temp_char);//convert to string with given precision
     //display current flow
     lcd.setCursor(6,1);
@@ -52,7 +52,7 @@ void displayFlow() { //displays the following: xxxxxL w x.xxL/min
     lcd.print("L/min");
 
     timer_flow_teasurement = millis();
-    last_count_value = total_count_;
+    last_count_value = total_flow_count_;
   }
 }
 
@@ -132,6 +132,24 @@ void clearLCD(){
     timer = millis();
   }
 }
+
+void displayRPM(){
+  static unsigned long timer;
+  
+  byte REFRESH_TIME = 5; //update every 5s
+  if ((millis() - timer) > (1000*REFRESH_TIME)) //update every 5s cause value varies a lot...
+  {
+    lcd.setCursor(0,2);
+    lcd.print("RPM: ");
+    
+    lcd.print(total_rpm_count_*60/REFRESH_TIME/2);//assuming two signals per revolution
+    
+    timer = millis();
+    total_rpm_count_ = 0;
+  }
+}
+ 
+
 
 
 

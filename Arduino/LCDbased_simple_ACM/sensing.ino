@@ -10,7 +10,12 @@ float measureTemperature(int analog_pin) {
   return temperature; 
 }
 
-//interruptFunction-------------------------------------------------------------------
-void interruptFunction(){
-  total_count_++;
+//increaseFlowCounter-------------------------------------------------------------------
+void increaseFlowCounter(){
+  total_flow_count_++;
+}
+  
+//increaseRPMCounter-------------------------------------------------------------------
+void increaseRPMCounter(){
+  total_rpm_count_++;
 }

@@ -39,14 +39,26 @@ const double R_INFINITY = THERMOISTOR_RESISTANCE * exp(-B_PARAMETER/AMBIENT_TEMP
 float measureTemperature(int analog_pin);
 
 /*********************************************************************************
- **  interruptFunction()
+ **  increaseFlowCounter
  **
  **  Function is called when interrupt is triggered on digital pin 2 by a rising 
- **  signal
+ **  signal and increase the flow counter
  **
  **  Input:  None
  **  Output: None
  *********************************************************************************/
-void interruptFunction();
+void increaseFlowCounter();
+
+/*********************************************************************************
+ **  increaseRPMCounter
+ **
+ **  Function is called when interrupt is triggered on digital pin 3 by a rising 
+ **  signal and increase the fan RPM counter
+ **
+ **  Input:  None
+ **  Output: None
+ *********************************************************************************/
+void increaseRPMCounter();
+
 
 

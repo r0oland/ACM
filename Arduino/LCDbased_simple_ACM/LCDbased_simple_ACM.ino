@@ -16,28 +16,27 @@
 #include "globals.h"
 #include "lcd_functions.h"
 
-int ledPin = 9;
-
 LiquidCrystal lcd(12, 11, 13, 4, 8, 7);
 
 void setup() {
+  delay(3000); //give computer time to start up
   lcd.begin(20, 4); //number of chars per line, number of lines
-  attachInterrupt(0, interruptFunction, RISING); //on rising flank on 
+  attachInterrupt(0, increaseFlowCounter, RISING); //attach interrupt to pin 2
+  attachInterrupt(1, increaseRPMCounter, RISING); //attach interrupt to pin 3
   analogReference(EXTERNAL); //set to external reference to use the correct
   //5V signal, since it is important for temp. meas acquracy
   
   // FIXXME (<JR, 26.09.2013 >) -> <just hard wired PWM controll to have fan not super loud>
   TCCR1B = TCCR1B & 0b11111000 | 0x01; //set to highest possible freq. for PWM on channel 9 & 10
-  analogWrite(9, 190);      
+  analogWrite(9, 100);      
    // FIXXME (<JR, 26.09.2013 >)
-   
 }
 
 void loop() {
   displayTemperatures();
   displayFlow();
   displayUptime();
-  //clearLCD(); //leave it out for now...
+  displayRPM();
 }
 
 
