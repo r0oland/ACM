@@ -60,7 +60,7 @@ void displayUptime() {//display Uptime:
   {    
     char temp_char[6]; //max char length = 5 chars
     unsigned long uptime[] = {
-      millis()/10,0,0,0,0    };
+      millis()/1000,0,0,0,0    }; //store current uptime in seconds
 
     lcd.setCursor(0,3);
     lcd.print("Uptime: ");

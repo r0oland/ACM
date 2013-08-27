@@ -28,7 +28,7 @@ void setup() {
   
   // FIXXME (<JR, 26.09.2013 >) -> <just hard wired PWM controll to have fan not super loud>
   TCCR1B = TCCR1B & 0b11111000 | 0x01; //set to highest possible freq. for PWM on channel 9 & 10
-  analogWrite(9, 100);      
+  analogWrite(9, 130);      
    // FIXXME (<JR, 26.09.2013 >)
 }
 
